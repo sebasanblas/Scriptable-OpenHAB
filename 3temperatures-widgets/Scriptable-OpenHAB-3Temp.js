@@ -7,10 +7,14 @@
 // Description: Widget to show three different temperatures
 
 /**************
-Version 1.0.0
+Version 1.0.1
 
 Changelog:
-  v1.0.0:
+    v1.0.1:
+            - Small color correction
+            - Add method to parse a string and returns a floating-point number
+            - Define two decimal places in values
+    v1.0.0:
             - Initial version
 
 Credits: 
@@ -102,11 +106,11 @@ item_1_title.textColor = Color.black();
 
 //Valor
 item_1.addSpacer(3);
-const item_1_value = (await info_state(input_1)).match(/[0-9.]+/g)[0];
+const item_1_value = parseFloat((await info_state(input_1)).match(/[0-9.]+/g)[0]).toFixed(2);
 let item_1_txt = item_1.addText(item_1_value);
 if (item_1_value < 5) { 
      item_1_txt.textColor =  new Color("#9400D3");
- } else if (item_1_value < 15){
+ } else if (item_1_value < 20){
      item_1_txt.textColor = new Color("#1E90FF");
  } else if (item_1_value < 30){
      item_1_txt.textColor = new Color("#FF8C00");
@@ -145,11 +149,11 @@ item_2_title.textColor = Color.black();
 
 //Valor
 item_2.addSpacer(3);
-const item_2_value = (await info_state(input_2)).match(/[0-9.]+/g)[0];
+const item_2_value = parseFloat((await info_state(input_2)).match(/[0-9.]+/g)[0]).toFixed(2);
 let item_2_txt = item_2.addText(item_2_value);
 if (item_2_value < 5) { 
      item_2_txt.textColor =  new Color("#9400D3");
- } else if (item_2_value < 25){
+ } else if (item_2_value < 20){
      item_2_txt.textColor = new Color("#1E90FF");
  } else if (item_2_value < 30){
      item_2_txt.textColor = new Color("#FF8C00");
@@ -188,11 +192,11 @@ item_3_title.textColor = Color.black();
 
 //Valor
 item_3.addSpacer(3);
-const item_3_value = (await info_state(input_3)).match(/[0-9.]+/g)[0];
+const item_3_value = parseFloat((await info_state(input_3)).match(/[0-9.]+/g)[0]).toFixed(2);
 let item_3_txt = item_3.addText(item_3_value);
 if (item_3_value < 5) { 
      item_3_txt.textColor = new Color("#9400D3");
- } else if (item_3_value < 25){
+ } else if (item_3_value < 20){
      item_3_txt.textColor = new Color("#1E90FF");
  } else if (item_3_value < 30){
      item_3_txt.textColor = new Color("#FF8C00");
