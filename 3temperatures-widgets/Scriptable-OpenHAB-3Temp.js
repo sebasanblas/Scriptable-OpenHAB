@@ -7,9 +7,11 @@
 // Description: Widget to show three different temperatures
 
 /**************
-Version 1.0.1
+Version 1.0.2
 
 Changelog:
+    v1.0.2:
+            - Automatic encoding username and password
     v1.0.1:
             - Small color correction
             - Add method to parse a string and returns a floating-point number
@@ -25,7 +27,7 @@ Credits:
 //            User config connection
 ///////////////////////////////////////////////////
 
-const user = "my%40email.com" //Remember to change the @ sign to %40
+const user = "my@email.com"
 const password = "password"
 const IP = "iptoconnect" // Default "myopenhab.org"
 
@@ -48,7 +50,7 @@ const input_3 = "iteminput_3";
 //            Variable initialization
 ///////////////////////////////////////////////////
 
-const principal_link = `https://${user}:${password}@${IP}:443/rest/items/`;
+const principal_link = `https://${encodeURIComponent(user)}:${encodeURIComponent(password)}@${IP}:443/rest/items/`;
 
 let widget = new ListWidget();
 // widget.setPadding(8, 10, 0, 10);
