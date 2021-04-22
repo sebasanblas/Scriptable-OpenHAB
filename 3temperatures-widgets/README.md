@@ -5,7 +5,6 @@
 ## Setup
 
 The "User Config Connection" section must be edited with the username, password and IP.
-Remember that the user must use character encoding. Please see [Character Encoding ](https://grox.net/utils/encoding.html)
 
 Edit the names of the titles and the names of the items, equal to those defined in OpenHAB.
 
